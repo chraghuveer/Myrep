@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="vendor/angular.min.js"></script> 
+	<title>RegistrationPage</title>
+</head>
+<body ng-app="registerApp" ng-controller="registerCtrl">
+<div class= "container">
+<form class="form-horizontal">
+        <div class="form-group">
+            <label for="inputFirstName" class="control-label col-xs-2">FirstName</label>
+            <div class="col-xs-10">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="FirstName" ng-model="regdata.firstname">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputLastName" class="control-label col-xs-2">LastName</label>
+            <div class="col-xs-10">
+                <input type="text" class="form-control" id="inputLastName" placeholder="LastName" ng-model="regdata.lastname">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAge" class="control-label col-xs-2">Age</label>
+            <div class="col-xs-10">
+                <input type="texts" class="form-control" id="inputAge" placeholder="Age"  ng-model="regdata.age" onkeyup="checkInput(this)"/>
+            </div>
+        </div>
+
+         <div class="form-group">
+            <label for="gender" class="control-label col-xs-2">Gender</label>
+           <div class="col-xs-offset-2 col-xs-6">
+            <div class="col-xs-6">
+                               
+                        <input type="radio" name="gender" ng-model="regdata.gender" value="male" autocomplete="off" />Male<br />
+                        <input type="radio" name="gender" ng-model="regdata.gender" value="female" autocomplete="off" />Female<br />
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="form-group">
+             <label for="ddState"
+                    class="control-label col-xs-2">State</label>
+             <div class="col-xs-offset-2 col-xs-6">
+                 <div class="col-xs-6">
+                 <select class="form-control" id="ddState" ng-model="regdata.state" ng-options="state for state in states" ng-change="dropdownChange()">
+                 </select>
+                 </div>
+             </div>
+        </div>
+
+        <div class="form-group">
+             <label for="ddlCity"
+                    class="control-label col-xs-2">City</label>
+             <div class="col-xs-offset-2 col-xs-6">
+                 <div class="col-xs-6">
+                 <select class="form-control" id="ddlCity" ng-model="regdata.city" ng-options="city for city in citys">
+                 </select>
+                 </div>
+             </div>
+        </div>
+               <div class="form-group">
+                  <label for="comment" class="control-label col-xs-2">User Agreement:</label>
+                     <div class="col-xs-offset-2 col-xs-6">
+              
+                      <div class="col-xs-10">
+                      <textarea classs="form-control" rows="5" cols="100" disabled>
+CU grants you a non-exclusive, non-transferable, limited right to access, use and display the Site and the Mobile Services and the materials provided thereon, and to download or print content displayed on our Site provided that you comply fully with this Agreement. The contents of the Site and the Mobile Services are only for your personal, noncommercial use. You agree not to interrupt, or attempt to interrupt, the operation of the Site or the Mobile Services or any part of them in any way.
+</textarea>
+                      </div>
+                    </div>
+                      
+               </div>
+
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <div class="checkbox">
+                    <label><input type="checkbox" ng-model="regdata.agreed"> Agree To Terms</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <button type="submit" class="btn btn-primary" ng-disabled="!(regdata.agreed && regdata.firstname && regdata.lastname && regdata.state && regdata.city && regdata.age && regdata.gender)" ng-click="registeredSuc()">Register</button>
+            </div>
+        </div>
+
+        
+    </form>
+</div>
+ <script src="app/app.js"></script>  
+<script src="app/controllers/registerCtrl.js"></script>     
+</body>
+</html>

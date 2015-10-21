@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="vendor/angular.min.js"></script> 
+	<title>RegistrationPage</title>
+</head>
+<body ng-app>
+<div class= "container">
+<form class="form-horizontal">
+        <div class="form-group">
+            <label for="inputFirstName" class="control-label col-xs-2">FirstName</label>
+            <div class="col-xs-10">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="FirstName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputLastName" class="control-label col-xs-2">LastName</label>
+            <div class="col-xs-10">
+                <input type="text" class="form-control" id="inputLastName" placeholder="LastName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAge" class="control-label col-xs-2">Age</label>
+            <div class="col-xs-10">
+                <input type="number" class="form-control" id="inputAge" placeholder="Age">
+            </div>
+        </div>
+        <div class="bs-example">
+   <div class="dropdown">
+        <label for="inputState" class="control-label col-xs-2">State</label>
+        <select id="inputState">
+        <ul class="dropdown-menu" id="inputState">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+        </ul>
+        </select>
+    </div>
+</div>
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <div class="checkbox">
+                    <label><input type="checkbox"> Agree To Terms</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+
+        
+    </form>
+</div>
+ <h1>welcome to {{message}}</h1>
+<input type="text" ng-model="message"/>
+       
+</body>
+</html>
