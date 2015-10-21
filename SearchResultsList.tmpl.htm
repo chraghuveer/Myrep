@@ -1,0 +1,29 @@
+<script id="SearchResultsTemplate" type="text/x-handlebars-template">
+
+{{#each resultList}}
+	<div class="collection_item_container" id="item-{{attributes.guid.value}}">
+		<div class="collection_item">
+			<div class="collection_item_img">
+				<img src="{{{avatar_image this '25'}}}"/>
+			</div>
+			<div class="collection_item_logo {{{item_type this}}"/>
+			<div class="collection_item_title">
+    			<span>
+					<a href="{{{search_link this}}}" onclick="handleHrefClickInternally(this); return false;">{{{search_result_title this}}}</a>
+				</span>
+				<div class="{{{is_private this}}}">
+  				    &nbsp;
+  				 </div>
+			</div>
+			<div class="collection_item_description">
+    			{{{search_unescape attributes.description}}}
+			</div>
+			<div  class="collection_item_extensions search_align">
+				{{{search_extensions this}}} {{{search_about this}}} {{{search_author this}}} {{{search_tags this}}}
+			</div>
+			<div class="search_result_divider"></div>
+		</div>
+	</div>
+{{/each}}
+
+</script>

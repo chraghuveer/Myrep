@@ -1,0 +1,20 @@
+<script id="ResourceTitleTemplate" type="text/x-handlebars-template">
+	<div class="rtitle_wrap">
+		<div class="rtitle_right">
+			<span>{{{i18n "com.soa.atmosphere.current_version"}}}:</span>
+			<div class="rtitle_dropdown">
+				{{{version_dropdown rsc versions view}}}
+			</div>
+		</div>
+		<h1 style="color: purple; font: monospace">
+			<img src="/resources/style/images/white_{{rsc.type}}.png"/>
+			<span>{{rsc.attributes.Name}}</span>
+		</h1>
+		
+		<script>
+			makeDropdownEvents('#versionRightBar');
+		</script>
+	</div>
+	
+
+</script>
